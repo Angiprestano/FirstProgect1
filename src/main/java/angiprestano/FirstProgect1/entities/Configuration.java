@@ -38,4 +38,28 @@ public class Configuration {
         return pizzaSalame;
     }
 
+    @Bean
+    Toppings Cheese() {
+        return new Toppings("Cheese", 350, 2.00);
+    }
+
+    @Bean
+    Toppings Mushrooms() {
+        return new Toppings("Mushrooms", 400, 2.00);
+    }
+
+    @Bean
+    Toppings Fries() {
+        return new Toppings("Fries", 700, 2.50);
+    }
+
+    @Bean
+    Toppings Ham() {
+        return new Toppings("Ham", 300, 1.50);
+    }
+
+    @Bean
+    Toppings Pineapple() {
+        return new Toppings("Pineapple", 400, 2.00);
+    }
 }
