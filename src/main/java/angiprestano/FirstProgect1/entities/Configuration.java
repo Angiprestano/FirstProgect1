@@ -2,45 +2,58 @@ package angiprestano.FirstProgect1.entities;
 
 import org.springframework.context.annotation.Bean;
 
+import java.util.Arrays;
+
 @org.springframework.context.annotation.Configuration
 public class Configuration {
 
+    //PIZZE
+
     @Bean
-    public PizzaMargherita Margherita() {
-        PizzaMargherita pizzaMargherita = new PizzaMargherita();
-        pizzaMargherita.setIngredient1("Tomato");
-        pizzaMargherita.setIngredient2("Cheese");
-        pizzaMargherita.setCalories(1010);
-        pizzaMargherita.setPrice(4.99);
-        return pizzaMargherita;
+    public Pizza margherita(){
+        Pizza pizza=new Pizza();
+        pizza.setName("Margherita");
+        pizza.setToppingsList(Arrays.asList(Tomato(),Cheese()));
+        pizza.setCalories(1010);
+        pizza.setPrice(4.99);
+        return pizza;
     }
 
     @Bean
-    public PizzaHawain Hawain() {
-        PizzaHawain pizzaHawain = new PizzaHawain();
-        pizzaHawain.setIngredient1("Tomato");
-        pizzaHawain.setIngredient2("Cheese");
-        pizzaHawain.setHam("Ham");
-        pizzaHawain.setPineapple("Pineapple");
-        pizzaHawain.setCalories(1024);
-        pizzaHawain.setPrice(6.99);
-        return pizzaHawain;
+    public Pizza Hawain() {
+        Pizza pizza = new Pizza();
+        pizza.setName("Hawain");
+        pizza.setToppingsList(Arrays.asList(Tomato(), Cheese(), Ham(), Pineapple()));
+        pizza.setCalories(1024);
+        pizza.setPrice(6.99);
+        return pizza;
     }
 
     @Bean
-    public PizzaSalame Salame() {
-        PizzaSalame pizzaSalame = new PizzaSalame();
-        pizzaSalame.setIngredient1("Tomato");
-        pizzaSalame.setIngredient2("Cheese");
-        pizzaSalame.setSalame("Salami");
-        pizzaSalame.setCalories(1160);
-        pizzaSalame.setPrice(5.99);
-        return pizzaSalame;
+    public Pizza Salame() {
+        Pizza pizza = new Pizza();
+        pizza.setName("Salame");
+        pizza.setToppingsList(Arrays.asList(Tomato(), Cheese(), Salami()));
+        pizza.setCalories(1160);
+        pizza.setPrice(5.99);
+        return pizza;
     }
+
+    // TOPPINGS
 
     @Bean
     Toppings Cheese() {
         return new Toppings("Cheese", 350, 2.00);
+    }
+
+    @Bean
+    Toppings Tomato(){
+        return new Toppings("Tomato",150,1.00);
+    }
+
+    @Bean
+    Toppings Salami() {
+        return new Toppings("Salame", 200, 1.50);
     }
 
     @Bean
@@ -61,5 +74,32 @@ public class Configuration {
     @Bean
     Toppings Pineapple() {
         return new Toppings("Pineapple", 400, 2.00);
+    }
+
+    //DRINKS
+
+    @Bean
+    Drinks Water() {
+        return new Drinks("Water",0.50, 0, 0, 1.50);
+    }
+
+    @Bean
+    Drinks CocaCola() {
+        return new Drinks("CocaCola", 0.75, 0, 150, 2.00);
+    }
+
+    @Bean
+    Drinks Aranciata() {
+        return new Drinks("Aranciata", 0.50, 0, 140, 2.00);
+    }
+
+    @Bean
+    Drinks Wine() {
+        return new Drinks("Wine", 1.00, 13, 800, 12.00);
+    }
+
+    @Bean
+    Drinks Beer() {
+        return new Drinks("Beer", 0.75, 4, 270, 3.00);
     }
 }

@@ -1,7 +1,5 @@
 package angiprestano.FirstProgect1;
 
-import angiprestano.FirstProgect1.entities.PizzaMargherita;
-import angiprestano.FirstProgect1.entities.PizzaSalame;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
