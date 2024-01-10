@@ -2,7 +2,9 @@ package angiprestano.FirstProgect1.entities;
 
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @org.springframework.context.annotation.Configuration
 public class Configuration {
@@ -101,5 +103,14 @@ public class Configuration {
     @Bean
     Drinks Beer() {
         return new Drinks("Beer", 0.75, 4, 270, 3.00);
+    }
+
+    @Bean("ListOfPizze")
+            List<Pizza> ListOfPizza() {
+        List<Pizza> Pizzas = new ArrayList<>();
+        Pizzas.add(margherita());
+        Pizzas.add(Hawain());
+        Pizzas.add(Salame());
+        return Pizzas;
     }
 }
