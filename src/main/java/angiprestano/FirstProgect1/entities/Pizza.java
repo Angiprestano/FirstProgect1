@@ -54,7 +54,7 @@ public class Pizza {
 
     @Override
     public String toString() {
-        return "Pizza{" +
+        return "\n Pizza{" +
                 "name='" + name + '\'' +
                 ", toppingsList=" + toppingsList.stream().map(Toppings::getName).toList() +
                 ", calories=" + calories +

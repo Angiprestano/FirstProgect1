@@ -7,7 +7,6 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 
 public class Drinks {
     private String name;
@@ -15,4 +14,15 @@ public class Drinks {
     private int degree;
     private int calories;
     private double price;
+
+    @Override
+    public String toString() {
+        return " \n Drinks{" +
+                "name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", degree=" + degree +
+                ", calories=" + calories +
+                ", price=" + price +
+                '}';
+    }
 }
